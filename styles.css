@@ -1,0 +1,109 @@
+:root {
+  color-scheme: light;
+  --page: #26354a;
+  --panel: #f7f0d2;
+  --ink: #38271c;
+  --button: #f3b13d;
+  --button-edge: #b96f25;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  display: grid;
+  place-items: center;
+  min-height: 100%;
+  background:
+    radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.16), transparent 26rem),
+    linear-gradient(180deg, #172235, var(--page));
+  font-family: "Trebuchet MS", Arial, sans-serif;
+}
+
+.shell {
+  position: relative;
+  width: min(100vw, 432px);
+  padding: 12px;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  aspect-ratio: 288 / 512;
+  image-rendering: pixelated;
+  background: #70c5ce;
+  border: 4px solid #1b1b1b;
+  border-radius: 8px;
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.35);
+  touch-action: manipulation;
+}
+
+.hud {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 10px;
+  color: var(--ink);
+}
+
+.stat,
+button {
+  min-height: 42px;
+  border: 3px solid #1b1b1b;
+  border-radius: 8px;
+  box-shadow: inset 0 -4px rgba(0, 0, 0, 0.16);
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px;
+  background: var(--panel);
+  font-weight: 800;
+}
+
+.stat span {
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.stat strong {
+  min-width: 2ch;
+  font-size: 20px;
+  line-height: 1;
+  text-align: right;
+}
+
+button {
+  cursor: pointer;
+  padding: 7px 13px;
+  background: var(--button);
+  color: var(--ink);
+  border-color: #1b1b1b;
+  font: 800 14px/1 "Trebuchet MS", Arial, sans-serif;
+}
+
+button:active {
+  transform: translateY(1px);
+  box-shadow: inset 0 -2px rgba(0, 0, 0, 0.16);
+}
+
+@media (max-height: 620px) {
+  .shell {
+    width: min(100vw, 330px);
+    padding: 8px;
+  }
+
+  .hud {
+    margin-top: 6px;
+  }
+}
