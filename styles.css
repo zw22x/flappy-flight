@@ -31,6 +31,9 @@ body {
   position: relative;
   width: min(100vw, 432px);
   padding: 12px;
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 canvas {
@@ -42,7 +45,7 @@ canvas {
   border: 4px solid #1b1b1b;
   border-radius: 8px;
   box-shadow: 0 22px 60px rgba(0, 0, 0, 0.35);
-  touch-action: manipulation;
+  touch-action: none;
 }
 
 .hud {

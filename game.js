@@ -440,11 +440,11 @@ function loop(now) {
 }
 
 function handleAction(event) {
-  event.preventDefault();
+  if (event.cancelable) event.preventDefault();
   flap();
 }
 
-canvas.addEventListener("pointerdown", handleAction);
+canvas.addEventListener("pointerdown", handleAction, { passive: false });
 window.addEventListener("keydown", (event) => {
   if (event.code === "Space" || event.code === "ArrowUp") handleAction(event);
 });
